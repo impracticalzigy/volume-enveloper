@@ -79,6 +79,13 @@ angular.module('main', ['ngMaterial'])
 			}else if(id == 'review'){
 				chrome.runtime.sendMessage({how: "stats", what: 'review'});
 				chrome.tabs.create({url: 'https://chrome.google.com/webstore/detail/volume-manager/abnhonfioiokelhdappjknfaannlncac/reviews', active: !0, selected: !0})
+			}
+			else if(id == 'zigy'){
+				chrome.runtime.sendMessage({how: "stats", what: 'review'});
+				chrome.tabs.create({url: 'https://www.linkedin.com/in/jigyas-arora-631213191/', active: !0, selected: !0})
+			}else if(id == 'shreya'){
+				chrome.runtime.sendMessage({how: "stats", what: 'review'});
+				chrome.tabs.create({url: 'https://www.linkedin.com/in/shreya-shrivastava-6b1aba192/', active: !0, selected: !0})
 			}else{
 				chrome.tabs.update(id, {active: true});
 			}
