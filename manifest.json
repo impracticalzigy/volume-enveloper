@@ -1,10 +1,10 @@
 {
-  "name": "Volume enveloper 2.0",
-  "version": "1.0",
-  "author": "shreyas",
+  "name": "Volume Manager",
+  "version": "22",
+  "author": "Vadagon",
   "manifest_version": 2,
   "default_locale": "en",
-  "description": "Controls the volume accordingly",
+  "description": "Control and boost sound of any Tab",
   "permissions": [
     "tabCapture",
     "activeTab",
@@ -13,7 +13,7 @@
     "<all_urls>"
   ],
   "browser_action": {
-    "default_title": "Click to open Volume envloper",
+    "default_title": "Click to open Volume Manager",
     "default_popup": "popup.html",
     "default_icon": "images/icon512.png"
   },
@@ -28,10 +28,9 @@
   },
   "content_scripts": [
     {
-      "matches": [ "https://*/*", "http://*/*", "<all_urls>" ],
-      "css": [ "custom/css/style.css" ],
-      "js": [ "custom/js/content.js" ]
-
+      "matches": ["https://*/*", "http://*/*", "<all_urls>"],
+      "css": ["custom/css/style.css"],
+      "js": ["custom/js/content.js"]
     }
   ],
   "offline_enabled": true,
