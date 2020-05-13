@@ -1,0 +1,52 @@
+{
+  "name": "Volume Enveloper",
+  "version": "2.2",
+  "author": "Vadagon",
+  "manifest_version": 2,
+  "default_locale": "en",
+  "description": "Control and boost sound of any Tab",
+  "permissions": [
+    "tabCapture",
+    "activeTab",
+    "tabs",
+    "storage",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_title": "Click to open Volume Enveloper",
+    "default_popup": "popup.html",
+    "default_icon": "images/freeqgrey.png"
+  },
+  "icons": {
+    "16": "images/freeqgrey.png",
+    "16": "images/freeqgrey.png",
+    "48": "images/freeqgrey.png",
+    "128": "images/freeqgrey.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*", "<all_urls>"],
+      "css": ["custom/css/style.css"],
+      "js": ["custom/js/content.js"]
+    }
+  ],
+  "offline_enabled": true,
+  "commands": {
+    "toggle-up-1": {
+      "suggested_key": {
+        "default": "Alt+Up"
+      },
+      "description": "Volume up"
+    },
+    "toggle-down-1": {
+      "suggested_key": {
+        "default": "Alt+Down"
+      },
+      "description": "Volume down"
+    }
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+}
